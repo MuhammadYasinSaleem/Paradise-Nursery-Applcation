@@ -1,22 +1,74 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import logo from "../assets/logo.jpg";
+import Header from "../components/header";
+import plantsData from "../data.js";
+import PlantCard from "../components/Plantcard";
 const Shopping = () => {
-    const navigate = useNavigate();
   return (
-    <div className="header">
-      <div className="logo" onClick={() => navigate("/")}>
-        <div className="logo-container">
-          <img src={logo} alt="Paradise Nursery Logo" />
+    <>
+      <Header />
+
+      <div className="shopping-page">
+        {/* Air Purifying Plants */}
+        <h2>Air Purifying Plants</h2>
+        <div className="plant-cards-container">
+          {plantsData.airPurifying.map((plant) => (
+            <PlantCard
+              key={plant.id}
+              plant={plant}
+            //   onAddToCart={handleAddToCart}
+            />
+          ))}
         </div>
-        <div className="log-text">
-          <span>Paradise Nursery <br/>Where Green Meets Serenity</span>
+
+        {/* Aromatic Fragrant Plants */}
+        <h2>Aromatic Fragrant Plants</h2>
+        <div className="plant-cards-container">
+          {plantsData.aromaticFragrant.map((plant) => (
+            <PlantCard
+              key={plant.id}
+              plant={plant}
+            //   onAddToCart={handleAddToCart}
+            />
+          ))}
+        </div>
+
+        {/* Insect Repellent Plants */}
+        <h2>Insect Repellent Plants</h2>
+        <div className="plant-cards-container">
+          {plantsData.insectRepellent.map((plant) => (
+            <PlantCard
+              key={plant.id}
+              plant={plant}
+            //   onAddToCart={handleAddToCart}
+            />
+          ))}
+        </div>
+
+        {/* Medicinal Plants */}
+        <h2>Medicinal Plants</h2>
+        <div className="plant-cards-container">
+          {plantsData.medicinal.map((plant) => (
+            <PlantCard
+              key={plant.id}
+              plant={plant}
+            //   onAddToCart={handleAddToCart}
+            />
+          ))}
+        </div>
+
+        {/* Low Maintenance Plants */}
+        <h2>Low Maintenance Plants</h2>
+        <div className="plant-cards-container">
+          {plantsData.lowMaintenance.map((plant) => (
+            <PlantCard
+              key={plant.id}
+              plant={plant}
+            //   onAddToCart={handleAddToCart}
+            />
+          ))}
         </div>
       </div>
-
-      <div>Plants</div>
-      <div><img src={logo} width='50px'/></div>
-    </div>
+    </>
   );
 };
 
