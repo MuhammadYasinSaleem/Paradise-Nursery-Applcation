@@ -100,6 +100,23 @@ body{
   height: auto;
   object-fit: contain;
 }
+/* Header.css or your existing CSS file for the header */
+
+.cart-counter {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .plants-text {
   position: relative;
@@ -145,10 +162,10 @@ body{
 }
 
 .plant-card button {
-  background-color: #4CAF50;
+  background-color: #4caf50;  /* Default green color */
   color: white;
   border: none;
-  padding: 10px;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -156,6 +173,25 @@ body{
 
 .plant-card button:hover {
   background-color: #45a049;
+}
+/* Style for when the item is added to the cart */
+.plant-card .added-to-cart {
+  background-color: #f44336;  /* Red color when added */
+  color: white;
+  animation: pulse 1s ease-in-out;  /* Pulse effect */
+}
+
+/* Animation for the added-to-cart button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 
