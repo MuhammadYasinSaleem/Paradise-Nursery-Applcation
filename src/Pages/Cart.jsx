@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { removeFromCart, clearCart } from "../redux/actions/cartActions";
+import { useNavigate } from "react-router-dom";  // Import useNavigate
 import Header from "../components/header";
-
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cartItems);
   const dispatch = useDispatch();
+  const navigate = useNavigate();  // Initialize useNavigate
 
   return (
     <>
@@ -35,10 +36,22 @@ const Cart = () => {
           </div>
         )}
         {cartItems.length > 0 && (
-          <button onClick={() => dispatch(clearCart())} className="clear-cart-btn">
-            Clear Cart
-          </button>
+          <>
+            <button onClick={() => dispatch(clearCart())} className="clear-cart-btn">
+              Clear Cart
+            </button>
+            
+          </>
         )}
+        {/* Container for both buttons */}
+        <div className="button-container">
+              <button 
+                onClick={() => navigate("/shopping")}  // Navigate to the shopping page
+                className="continue-shopping-btn"
+              >
+                Continue Shopping
+              </button>
+            </div>
       </div>
     </>
   );

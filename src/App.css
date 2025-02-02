@@ -273,4 +273,26 @@ body{
 .clear-cart-btn:hover {
   background-color: #388e3c;
 }
+/* Add this to your Cart component's CSS or main CSS file */
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;  /* Space between the buttons */
+}
+
+.clear-cart-btn, .continue-shopping-btn {
+  background-color: #4caf50;  /* Green background color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;  /* Space between the buttons */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.clear-cart-btn:hover, .continue-shopping-btn:hover {
+  background-color: #45a049;  /* Darker green on hover */
+}
