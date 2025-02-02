@@ -7,7 +7,10 @@ import { CiShoppingCart } from "react-icons/ci";
 const Header = () => {
   const navigate = useNavigate();
   const cartItems = useSelector((state) => state.cartItems);
-  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalItems = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
   return (
     <div className="header">
       <div className="logo" onClick={() => navigate("/")}>
@@ -22,8 +25,8 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="plants-text"  onClick={() => navigate("/shopping")}>
-        <span style={{ fontSize: "40px",cursor:'pointer' }}>Plants</span>
+      <div className="plants-text" onClick={() => navigate("/shopping")}>
+        <span style={{ fontSize: "40px", cursor: "pointer" }}>Plants</span>
       </div>
 
       <div>
@@ -36,11 +39,9 @@ const Header = () => {
           onClick={() => navigate("/cart")}
         >
           <CiShoppingCart size={50} style={{ color: "white" }} />
-          {totalItems > 0 && (
-            <span className="cart-counter">
-              {totalItems}
-            </span>
-          )}
+          <span className="cart-counter">
+            {totalItems > 0 ? totalItems : 0}
+          </span>
         </button>
       </div>
     </div>
