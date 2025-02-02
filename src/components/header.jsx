@@ -19,14 +19,21 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="plants-text">
-        <span style={{ fontSize: "40px" }}>Plants</span>
+      <div className="plants-text"  onClick={() => navigate("/shopping")}>
+        <span style={{ fontSize: "40px",cursor:'pointer' }}>Plants</span>
       </div>
 
       <div>
-      <button style={{backgroundColor:"transparent",border:"none",cursor:"pointer"}}>
-      <CiShoppingCart size={50} style={{color:"white"}} />
-    </button>
+        <button
+          style={{
+            backgroundColor: "transparent",
+            border: "none",
+            cursor: "pointer",
+          }}
+          onClick={() => navigate("/cart")}
+        >
+          <CiShoppingCart size={50} style={{ color: "white" }} />
+        </button>
       </div>
     </div>
   );

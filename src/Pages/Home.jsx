@@ -9,7 +9,7 @@ const Home = () => {
       <div className="content">
         <h1>Welcome to Paradise Nursery</h1>
         <p>Find the best plants for your home and garden.</p>
-        <button onClick={() => navigate("/Shopping")}>Get Started</button>
+        <button onClick={() => navigate("/shopping")}>Get Started</button>
       </div>
     </div>
   );
