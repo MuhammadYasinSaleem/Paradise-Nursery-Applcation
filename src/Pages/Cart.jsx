@@ -9,6 +9,9 @@ const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();  // Initialize useNavigate
 
+  // Calculate total price
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
   return (
     <>
       <Header />
@@ -35,23 +38,27 @@ const Cart = () => {
             ))}
           </div>
         )}
+        
         {cartItems.length > 0 && (
           <>
+            <div className="total-price">
+              <h3>Total: ${totalPrice.toFixed(2)}</h3>
+            </div>
             <button onClick={() => dispatch(clearCart())} className="clear-cart-btn">
               Clear Cart
             </button>
-            
           </>
         )}
+        
         {/* Container for both buttons */}
         <div className="button-container">
-              <button 
-                onClick={() => navigate("/shopping")}  // Navigate to the shopping page
-                className="continue-shopping-btn"
-              >
-                Continue Shopping
-              </button>
-            </div>
+          <button 
+            onClick={() => navigate("/shopping")}  // Navigate to the shopping page
+            className="continue-shopping-btn"
+          >
+            Continue Shopping
+          </button>
+        </div>
       </div>
     </>
   );
