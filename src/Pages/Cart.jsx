@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, clearCart, decrementQuantity } from "../redux/actions/cartActions";
+import { removeFromCart, clearCart, decrementQuantity, incrementQuantity } from "../redux/actions/cartActions";
 import { useNavigate } from "react-router-dom";  // Import useNavigate
 import Header from "../components/header";
 
@@ -39,6 +39,13 @@ const Cart = () => {
                     className="decrease-btn"
                   >
                     Decrease
+                  </button>
+                  {/* Increase button */}
+                  <button
+                    onClick={() => dispatch(incrementQuantity(item.id))}
+                    className="increase-btn"
+                  >
+                    Increase
                   </button>
                 </div>
               </div>

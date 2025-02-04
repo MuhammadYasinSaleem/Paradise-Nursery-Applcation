@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, DECREMENT_QUANTITY } from '../actions/cartActions';
+import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, DECREMENT_QUANTITY, INCREMENT_QUANTITY } from '../actions/cartActions';
 
 const initialState = {
   cartItems: [],
@@ -41,6 +41,15 @@ const cartReducer = (state = initialState, action) => {
         }
 
         return { ...state, cartItems: updatedDecrementCart };
+      }
+      return state;
+
+    case INCREMENT_QUANTITY:  // Handle increment action
+      const incrementItemIndex = state.cartItems.findIndex(item => item.id === action.payload);
+      if (incrementItemIndex !== -1) {
+        const updatedIncrementCart = [...state.cartItems];
+        updatedIncrementCart[incrementItemIndex].quantity += 1;  // Increment the quantity
+        return { ...state, cartItems: updatedIncrementCart };
       }
       return state;
 

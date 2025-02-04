@@ -333,3 +333,16 @@ body{
 .decrease-btn:hover {
   background-color: #f5c6cb; /* Slightly darker red */
 }
+.increase-btn {
+  background-color: #c3e6cb; /* Light green */
+  color: #155724;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.increase-btn:hover {
+  background-color: #b1dfbb; /* Slightly darker green */
+}
