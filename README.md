@@ -30,7 +30,7 @@ Welcome to **Paradise Nursery** — an online plant shopping experience designed
 ![Shopping Page](./src/assets/Shopping.png)
 *Browse through our collection of plants and start shopping.*
 
-![Cart Page](./src/assets/cart.png)
+![Cart Page](./src/assets/Cart.png)
 *Review your cart and proceed with your purchase.*
 
 ---
