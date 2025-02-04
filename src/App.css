@@ -45,7 +45,7 @@ body{
 
 .content p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  margin: 20px;
 }
 
 .content button {

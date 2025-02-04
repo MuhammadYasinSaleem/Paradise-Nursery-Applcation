@@ -1,21 +1,50 @@
 // data.js
 const plantsData = {
-    airPurifying: [
-      {
-        id: 1,
-        name: 'Aloe Vera',
-        description: 'A healing plant with numerous benefits.',
-        price:110,
-        image: '/aloe vera.jpg',
-      },
-      {
-        id: 2,
-        name: 'Spider Plant',
-        description: 'A popular houseplant known for removing toxins from the air.',
-        price:120,
-        image: '/Spider Plant.jpg',
-      },
-    ],
+   airPurifying : [
+    {
+      id: 1,
+      name: "Aloe Vera",
+      description: "A healing plant with numerous benefits.",
+      price: 110,
+      image: "/aloe vera.jpg",
+    },
+    {
+      id: 2,
+      name: "Spider Plant",
+      description: "A popular houseplant known for removing toxins from the air.",
+      price: 120,
+      image: "/Spider Plant.jpg",
+    },
+    {
+      id: 3,
+      name: "Snake Plant",
+      description: "One of the best air purifiers, removes toxins and releases oxygen at night.",
+      price: 130,
+      image: "/Snake Plant.jpeg",
+    },
+    {
+      id: 4,
+      name: "Peace Lily",
+      description: "Beautiful and effective at filtering out pollutants.",
+      price: 150,
+      image: "/Peace Lily.jpg",
+    },
+    {
+      id: 5,
+      name: "Areca Palm",
+      description: "Adds tropical vibes while improving air quality.",
+      price: 160,
+      image: "/Areca Palm.jpg",
+    },
+    {
+      id: 6,
+      name: "Boston Fern",
+      description: "Excellent for humidifying the air and removing toxins.",
+      price: 140,
+      image: "/Boston Fern.jpg",
+    },
+  ],
+  
     aromaticFragrant: [
       {
         id: 3,
