@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, clearCart } from "../redux/actions/cartActions";
+import { removeFromCart, clearCart, decrementQuantity } from "../redux/actions/cartActions";
 import { useNavigate } from "react-router-dom";  // Import useNavigate
 import Header from "../components/header";
 
@@ -33,6 +33,13 @@ const Cart = () => {
                   >
                     Remove
                   </button>
+                  {/* Decrease button */}
+                  <button
+                    onClick={() => dispatch(decrementQuantity(item.id))}
+                    className="decrease-btn"
+                  >
+                    Decrease
+                  </button>
                 </div>
               </div>
             ))}
@@ -58,6 +65,16 @@ const Cart = () => {
           >
             Continue Shopping
           </button>
+
+          {/* Checkout Button */}
+          {cartItems.length > 0 && (
+            <button 
+              onClick={() => alert("Coming Soon!")} 
+              className="checkout-btn"
+            >
+              Checkout
+            </button>
+          )}
         </div>
       </div>
     </>

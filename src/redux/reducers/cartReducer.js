@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART } from '../actions/cartActions';
+import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_CART, DECREMENT_QUANTITY } from '../actions/cartActions';
 
 const initialState = {
   cartItems: [],
@@ -7,13 +7,13 @@ const initialState = {
 const cartReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
-      const itemIndex = state.cartItems.findIndex(item => item.id === action.payload.id);
-      if (itemIndex === -1) {
-        return { ...state, cartItems: [...state.cartItems, action.payload] };
+      const addItemIndex = state.cartItems.findIndex(item => item.id === action.payload.id);
+      if (addItemIndex === -1) {
+        return { ...state, cartItems: [...state.cartItems, { ...action.payload, quantity: 1 }] };
       } else {
-        const updatedCart = [...state.cartItems];
-        updatedCart[itemIndex].quantity += 1;  // Increment the quantity if the item is already in the cart
-        return { ...state, cartItems: updatedCart };
+        const updatedAddCart = [...state.cartItems];
+        updatedAddCart[addItemIndex].quantity += 1;  // Increment the quantity if the item is already in the cart
+        return { ...state, cartItems: updatedAddCart };
       }
 
     case REMOVE_FROM_CART:
@@ -27,6 +27,22 @@ const cartReducer = (state = initialState, action) => {
         ...state,
         cartItems: [],
       };
+
+    case DECREMENT_QUANTITY:
+      const decrementItemIndex = state.cartItems.findIndex(item => item.id === action.payload);
+      if (decrementItemIndex !== -1) {
+        const updatedDecrementCart = [...state.cartItems];
+        const item = updatedDecrementCart[decrementItemIndex];
+        
+        if (item.quantity > 1) {
+          updatedDecrementCart[decrementItemIndex].quantity -= 1;  // Decrement the quantity
+        } else {
+          updatedDecrementCart[decrementItemIndex].quantity = 1; // Ensure quantity doesn't go below 1
+        }
+
+        return { ...state, cartItems: updatedDecrementCart };
+      }
+      return state;
 
     default:
       return state;
